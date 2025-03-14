@@ -1,0 +1,132 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 50% 98%;
+    --foreground: 214 60% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 214 60% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 214 60% 15%;
+
+    --primary: 222 79% 33%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 214 32% 91%;
+    --secondary-foreground: 214 60% 15%;
+
+    --muted: 214 32% 91%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 142 70% 58%;
+    --accent-foreground: 222 79% 33%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222 79% 33%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/60 backdrop-blur-lg border border-white/20 rounded-2xl shadow-glass;
+  }
+  
+  .neomorphic {
+    @apply shadow-neomorphic bg-gradient-to-br from-white/80 to-white/40 rounded-2xl;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .hero-title {
+    @apply text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-display font-bold tracking-tight mb-6;
+  }
+  
+  .animate-on-scroll {
+    @apply opacity-0;
+  }
+  
+  .animate-on-scroll.animated {
+    @apply animate-fade-in;
+  }
+  
+  .csi-blue {
+    @apply text-[#1e3a8a];
+  }
+  
+  .csi-light-green {
+    @apply text-[#4ade80];
+  }
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::selection {
+  @apply bg-primary/20 text-primary;
+}
+
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 400ms, transform 400ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 300ms, transform 300ms;
+}
